@@ -3,7 +3,7 @@ import { useContext,useState } from "react";
 import { Link } from "react-router-dom";
 
 function ShopMain() {
-  const {productData,categoriesData} = useContext(DataContext);
+  const {productData,categoriesData,addToCart} = useContext(DataContext);
   const [categoryId,setCategoryId]=useState(1)
   return (
     <main style={{backgroundColor:"white"}}>
@@ -79,7 +79,7 @@ function ShopMain() {
                         <span className="old-price"><del>${item.price}</del></span>
                       </div>
                       <div className="product-btn">
-                        <a href="#"><i className="ion-bag" />Add to cart</a>
+                        <a onClick={()=>addToCart(item)}><i className="ion-bag" />Add to cart</a>
                       </div>
                       <div className="hover-box text-center">
                         <div className="ratings">

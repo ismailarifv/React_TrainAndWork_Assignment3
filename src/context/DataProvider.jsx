@@ -8,7 +8,15 @@ function DataProvider({children}) {
     const [blogData,setBlogData]=useState([])
     const [categoriesData,setCategoriesData]=useState([])
     const [userData,setUserData]=useState([])
-    
+    const [cartItems, setCartItems] = useState([]);
+    const addToCart = (product) => {
+      setCartItems([...cartItems, product]);
+      
+    };
+    const removeFromCart = (productId) => {
+      const updatedCart = cartItems.filter(item => item.id !== productId);
+      setCartItems(updatedCart);
+    };
 
     useEffect(()=>{
         // eslint-disable-next-line no-unused-vars
@@ -68,7 +76,10 @@ function DataProvider({children}) {
       productData,
       blogData,
       categoriesData ,
-      userData
+      userData,
+      cartItems,
+      addToCart,
+      removeFromCart
     }}
     >
         {children}
