@@ -11,7 +11,7 @@ function BannerTwo() {
             <p>weekly</p> 
             <h2>doorbusters</h2>
             <p>limited quantities available</p>
-            <a href="#" className="sqr-btn">view details</a>
+            
           </div>
         </div>
       </div>

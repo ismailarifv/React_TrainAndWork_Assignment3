@@ -1,6 +1,9 @@
-
+import { DataContext } from "../../context/DataProvider";
+import { useContext } from "react";
 
 function BlogArea() {
+  const {blogData} = useContext(DataContext);
+  const firstThreeItems = blogData.slice(0, 3);
   return (
     <div>
   <div className="latest-blog-area pt-100 pb-90 pt-sm-58 pb-sm-50">
@@ -14,13 +17,17 @@ function BlogArea() {
         </div>
       </div>
       <div className="blog-carousel-active slick-arrow-style slick-padding row">
-        <div className="col">
+        {
+          blogData && firstThreeItems &&
+          firstThreeItems.map((item,i)=>{
+            return(
+              <div key={i} className="col-4">
           <div className="blog-item white-text">
             <article className="blog-post">
               <div className="blog-post-content">
                 <div className="blog-top">
                   <div className="post-date-time">
-                    <span>10 DECEMBER,22 </span>
+                    <span>{item.date} </span>
                   </div>
                   <div className="post-blog-meta">
                     <p>post by HasTech</p>
@@ -28,73 +35,23 @@ function BlogArea() {
                 </div>
                 <div className="blog-thumb img-full">
                   <a href="blog-details.html">
-                    <img src="src/assets/img/blog/blog-1.jpg" alt="" />
+                    <img src={item.image} alt="" />
                   </a>
                 </div>
               </div>
               <div className="blog-content">
-                <h4><a href="blog-details.html">This is Secound Post For XipBlog</a></h4>
+                <h4><a href="blog-details.html">{item.title}</a></h4>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard ever since the ...
+                 {item.short_desc}...
                 </p>
               </div>
             </article>
           </div>
         </div>
-        <div className="col">
-          <div className="blog-item white-text">
-            <article className="blog-post">
-              <div className="blog-post-content">
-                <div className="blog-top">
-                  <div className="post-date-time">
-                    <span>10 DECEMBER,22 </span>
-                  </div>
-                  <div className="post-blog-meta">
-                    <p>post by HasTech</p>
-                  </div>
-                </div>
-                <div className="blog-thumb img-full">
-                  <a href="blog-details.html">
-                    <img src="src/assets/img/blog/blog-2.jpg" alt="" />
-                  </a>
-                </div>
-              </div>
-              <div className="blog-content">
-                <h4><a href="blog-details.html">This is Secound Post For XipBlog</a></h4>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard ever since the ...
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-        <div className="col">
-          <div className="blog-item white-text">
-            <article className="blog-post">
-              <div className="blog-post-content">
-                <div className="blog-top">
-                  <div className="post-date-time">
-                    <span>10 DECEMBER,22 </span>
-                  </div>
-                  <div className="post-blog-meta">
-                    <p>post by HasTech</p>
-                  </div>
-                </div>
-                <div className="blog-thumb img-full">
-                  <a href="blog-details.html">
-                    <img src="src/assets/img/blog/blog-3.jpg" alt="" />
-                  </a>
-                </div>
-              </div>
-              <div className="blog-content">
-                <h4><a href="blog-details.html">This is Secound Post For XipBlog</a></h4>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard ever since the ...
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
+            )
+          })
+        }
+       
         
       </div>
     </div>

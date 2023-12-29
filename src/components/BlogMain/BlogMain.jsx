@@ -1,6 +1,10 @@
-
+ import { DataContext } from "../../context/DataProvider";
+ import { useContext } from "react";
 
 function BlogMain() {
+
+     const {blogData} = useContext(DataContext);
+    
   return (
     <main style={{backgroundColor:"aliceblue"}}>
   <div className="blog-main-wrapper pt-100 pb-100 pt-sm-58 pb-sm-58">
@@ -9,13 +13,16 @@ function BlogMain() {
         <div className="col-lg-12">
           <div className="blog-wrapper">
             <div className="row">
-              <div className="col-xl-4 col-lg-6 col-md-6">
+              {
+                blogData.map((item,i)=>{
+                  return(
+                    <div key={i} className="col-xl-4 col-lg-6 col-md-6">
                 <div className="blog-item-single">
                   <article className="blog-post">
                     <div className="blog-post-content">
                       <div className="blog-top">
                         <div className="post-date-time">
-                          <span>10 DECEMBER,22 </span>
+                          <span>{item.date}</span>
                         </div>
                         <div className="post-blog-meta">
                           <p>post by <a href="#">HasTech</a></p>
@@ -23,20 +30,24 @@ function BlogMain() {
                       </div>
                       <div className="blog-thumb img-full">
                         <a href="blog-details.html">
-                          <img src="src/assets/img/blog/blog-large-1.jpg" alt="" />
+                          <img src={item.image} alt="" />
                         </a>
                       </div>
                     </div>
                     <div className="blog-content">
                       <h4><a href="blog-details.html">This is image Post For Blog</a></h4>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptate in consequatur temporibus ex magni non aperiam corporis, praesentium magnam a fuga eligendi natus est omnis perferendis dolorum quidem minus. Ipsam eveniet inventore quis magni architecto aut ab tempore deserunt amet minus id nulla, laboriosam dignissimos dolorum quasi veniam rerum...
+                        {item.short_desc}
                       </p>
                       <a href="blog-details.html" className="read-more">Read More...</a>
                     </div>
                   </article>
                 </div>
               </div>
+                  )
+                })
+              }
+              
               
               <div className="col-xl-4 col-lg-6 col-md-6">
                 <div className="blog-item-single">

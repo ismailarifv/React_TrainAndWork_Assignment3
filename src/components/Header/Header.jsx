@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom"
 
 function Header() {
   return (
@@ -23,9 +23,9 @@ function Header() {
                       <i className="fa fa-angle-down" />
                     </a>
                     <div className="dropdown-menu" aria-labelledby="myaccount">
-                      <a className="dropdown-item" href="my-account.html">my account</a>
-                      <a className="dropdown-item" href="login-register.html"> login</a>
-                      <a className="dropdown-item" href="login-register.html">register</a>
+                      <Link to={"/myacount"} className="dropdown-item" >my account</Link>
+                      <Link to={"/acount"} className="dropdown-item"> login</Link>
+                      <Link to={"/acount"} className="dropdown-item">register</Link>
                     </div>
                   </div>
                 </li>
@@ -43,9 +43,9 @@ function Header() {
       <div className="row align-items-center">
         <div className="col-lg-3 col-md-6 col-6">
           <div className="logo">
-            <a href="index-5.html">
+            <Link to={"/"}>
               <img src="src/assets/img/logo/logo_5.png" alt="Brand logo" />
-            </a>
+            </Link>
           </div>
         </div>
         <div className="col-lg-6 d-none d-lg-block">
@@ -53,17 +53,17 @@ function Header() {
             <div className="main-menu white-text">
               <nav id="mobile-menu">
                 <ul>
-                  <li className="active"><a href="#">Home</a>
+                  <li className="active"><Link to={"/"}>Home</Link>
                     
                   </li>
                   
-                  <li><a href="#">shop</a>
+                  <li><Link to={"/shop"}>shop</Link>
                     
                   </li>
-                  <li><a href="#">Blog</a>
+                  <li><Link to={"/blogs"}>Blog</Link>
                     
                   </li>
-                  <li><a href="contact-us.html">Contact us</a></li>
+                  <li><Link to={"/contact"}>Contact us</Link></li>
                 </ul>
               </nav>
             </div>

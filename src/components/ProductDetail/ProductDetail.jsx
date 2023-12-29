@@ -1,6 +1,14 @@
-
+import { DataContext } from "../../context/DataProvider";
+import { useContext } from "react";
+import { useParams } from 'react-router-dom';
+import BlogComment from "../ProductComment/ProductComment";
 
 function ProductDetail() {
+  const {productData} = useContext(DataContext);
+  const {id}=useParams()
+  const foundItem = productData.find((item) => {
+    return item.id == id;
+  });
   return (
     <main style={{backgroundColor:"white"}}>
   <div className="product-details-wrapper pt-100 pb-14 pt-sm-58">
@@ -12,7 +20,9 @@ function ProductDetail() {
               <div className="col-lg-5">
                 <div className="product-large-slider mb-20 slider-arrow-style slider-arrow-style__style-2">
                   <div className="pro-large-img img-zoom" id="img1">
-                    <img src="src/assets/img/product/product-details-img1.jpg" alt="" />
+                    <img src={"/"+foundItem.image} alt="" />
+                    
+                   
                   </div>
                   
                 </div>
@@ -20,7 +30,7 @@ function ProductDetail() {
               </div>
               <div className="col-lg-7">
                 <div className="product-details-des pt-md-98 pt-sm-58">
-                  <h3>Chaz Kangeroo Hoodies</h3>
+                  <h3>{foundItem.title}</h3>
                   <div className="ratings">
                     <span className="good"><i className="fa fa-star" /></span>
                     <span className="good"><i className="fa fa-star" /></span>
@@ -32,10 +42,9 @@ function ProductDetail() {
                     </div>
                   </div>
                   <div className="pricebox">
-                    <span className="regular-price">$160.00</span>
+                    <span className="regular-price">${foundItem.price-(foundItem.price/foundItem.indirim)}</span>
                   </div>
-                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br />
-                    Phasellus id nisi quis justo tempus mollis sed et dui. In hac habitasse platea dictumst. Suspendisse ultrices mauris diam. Nullam sed aliquet elit. Mauris consequat nisi ut mauris efficitur lacinia.</p>
+                  <p>{foundItem.description}</p>
                   <div className="quantity-cart-box d-flex align-items-center mb-24">
                     <div className="quantity">
                       <div className="pro-qty"><input type="text" defaultValue={1} /></div>
@@ -113,65 +122,7 @@ function ProductDetail() {
                       </table>
                     </div>
                     <div className="tab-pane fade" id="tab_three">
-                      <form action="#" className="review-form">
-                        <h5>1 review for <span>Chaz Kangeroo Hoodies</span></h5>
-                        <div className="total-reviews">
-                          <div className="rev-avatar">
-                            <img src="src/assets/img/about/avatar.jpg" alt="" />
-                          </div>
-                          <div className="review-box">
-                            <div className="ratings">
-                              <span className="good"><i className="fa fa-star" /></span>
-                              <span className="good"><i className="fa fa-star" /></span>
-                              <span className="good"><i className="fa fa-star" /></span>
-                              <span className="good"><i className="fa fa-star" /></span>
-                              <span><i className="fa fa-star" /></span>
-                            </div>
-                            <div className="post-author">
-                              <p><span>admin -</span> 30 Nov, 2018</p>
-                            </div>
-                            <p>Aliquam fringilla euismod risus ac bibendum. Sed sit amet sem varius ante feugiat lacinia. Nunc ipsum nulla, vulputate ut venenatis vitae, malesuada ut mi. Quisque iaculis, dui congue placerat pretium, augue erat accumsan lacus</p>
-                          </div>
-                        </div>
-                        <div className="form-group row">
-                          <div className="col">
-                            <label className="col-form-label"><span className="text-danger">*</span> Your Name</label>
-                            <input type="text" className="form-control" required />
-                          </div>
-                        </div>
-                        <div className="form-group row">
-                          <div className="col">
-                            <label className="col-form-label"><span className="text-danger">*</span> Your Email</label>
-                            <input type="email" className="form-control" required />
-                          </div>
-                        </div>
-                        <div className="form-group row">
-                          <div className="col">
-                            <label className="col-form-label"><span className="text-danger">*</span> Your Review</label>
-                            <textarea className="form-control" required defaultValue={""} />
-                            <div className="help-block pt-10"><span className="text-danger">Note:</span> HTML is not translated!</div>
-                          </div>
-                        </div>
-                        <div className="form-group row">
-                          <div className="col">
-                            <label className="col-form-label"><span className="text-danger">*</span> Rating</label>
-                            &nbsp;&nbsp;&nbsp; Bad&nbsp;
-                            <input type="radio" defaultValue={1} name="rating" />
-                            &nbsp;
-                            <input type="radio" defaultValue={2} name="rating" />
-                            &nbsp;
-                            <input type="radio" defaultValue={3} name="rating" />
-                            &nbsp;
-                            <input type="radio" defaultValue={4} name="rating" />
-                            &nbsp;
-                            <input type="radio" defaultValue={5} name="rating" defaultChecked />
-                            &nbsp;Good
-                          </div>
-                        </div>
-                        <div className="buttons">
-                          <button className="sqr-btn" type="submit">Continue</button>
-                        </div>
-                      </form> 
+                      <BlogComment product={foundItem}/>
                     </div>
                   </div>
                 </div>

@@ -1,8 +1,14 @@
 import CommentDo from "../CommentDo/CommentDo"
 import CommenList from "../CommentList/CommenList"
-
-
+import { DataContext } from "../../context/DataProvider";
+import { useContext } from "react";
+import { useParams } from 'react-router-dom';
 function BlogDetail() {
+  const {productData} = useContext(DataContext);
+  const {id}=useParams()
+  const foundItem = productData.find((item) => {
+    return item.id == id;
+  });
   return (
     <main style={{backgroundColor:"white"}}>
   <div className="blog-main-wrapper pt-100 pb-100 pt-sm-58 pb-sm-58">
@@ -16,7 +22,7 @@ function BlogDetail() {
                 <div className="blog-post-content">
                   <div className="blog-top">
                     <div className="post-date-time">
-                      <span>10 DECEMBER,22 </span>
+                      <span>{foundItem.date} </span>
                     </div>
                     <div className="post-blog-meta">
                       <p>post by <a href="#">HasTech</a></p>
@@ -25,14 +31,14 @@ function BlogDetail() {
                   <div className="blog-thumb">
                     <div className="blog-gallery-slider slider-arrow-style slider-arrow-style__style-2">
                       <div className="blog-single-slide">
-                        <img src="src/assets/img/blog/blog-large-3.jpg" alt="" />
+                        <img src={foundItem.image} alt="" />
                       </div>
                      
                     </div>
                   </div>
                 </div>
                 <div className="blog-content blog-details">
-                  <h4>This is gallery Post For XipBlog</h4>
+                  <h4>{foundItem.title}</h4>
                   <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate perferendis consequuntur illo aliquid nihil ad neque, debitis praesentium libero ullam asperiores exercitationem deserunt inventore facilis, officiis,</p>
                   <blockquote><p>Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur. In venenatis elit ac ultrices convallis. Duis est nisi, tincidunt ac urna sed, cursus blandit lectus. In ullamcorper sit amet ligula ut eleifend. Proin dictum tempor ligula, ac feugiat metus. Sed finibus tortor eu scelerisque scelerisque.</p></blockquote> 
                   <p>aliquam maiores asperiores recusandae commodi blanditiis ipsum tempora culpa possimus assumenda ab quidem a voluptatum quia natus? Ex neque, saepe reiciendis quasi velit perspiciatis error vel quas quibusdam autem nesciunt voluptas odit quis dignissimos eos aspernatur voluptatum est repellat. Pariatur praesentium, corrupti deserunt ducimus quo doloremque nostrum aspernatur saepe cupiditate sit autem exercitationem debitis, maiores vitae perferendis nemo? Voluptas illo, animi temporibus quod earum molestias eaque, iure rem amet autem dignissimos officia dolores numquam distinctio esse voluptates optio pariatur aspernatur omnis? Ipsam qui commodi velit natus reiciendis quod quibusdam nemo eveniet similique animi!</p>
