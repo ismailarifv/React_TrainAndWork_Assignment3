@@ -1,9 +1,12 @@
- //import { DataContext } from "../../context/DataProvider";
- //import { useContext } from "react";
+ import { DataContext } from "../../context/DataProvider";
+ import { useContext,useEffect } from "react";
 
 function ProductComment(foundItem) {
-   // const {userData} = useContext(DataContext);
-    
+    const {setProductIdsi,addComment,setNewComment} = useContext(DataContext);
+    useEffect(()=>{
+      console.log(foundItem);
+      setProductIdsi(foundItem.product.id)
+    },[foundItem,setProductIdsi])
     
   return (
     <form action="#" className="review-form">
@@ -33,22 +36,12 @@ function ProductComment(foundItem) {
                           })
                         }
                         
-                        <div className="form-group row">
-                          <div className="col">
-                            <label className="col-form-label"><span className="text-danger">*</span> Your Name</label>
-                            <input type="text" className="form-control" required />
-                          </div>
-                        </div>
-                        <div className="form-group row">
-                          <div className="col">
-                            <label className="col-form-label"><span className="text-danger">*</span> Your Email</label>
-                            <input type="email" className="form-control" required />
-                          </div>
-                        </div>
+                       
+                        
                         <div className="form-group row">
                           <div className="col">
                             <label className="col-form-label"><span className="text-danger">*</span> Your Review</label>
-                            <textarea className="form-control" required defaultValue={""} />
+                            <textarea onChange={(x)=>setNewComment(x.target.value)} className="form-control" required defaultValue={""} />
                             <div className="help-block pt-10"><span className="text-danger">Note:</span> HTML is not translated!</div>
                           </div>
                         </div>
@@ -69,7 +62,7 @@ function ProductComment(foundItem) {
                           </div>
                         </div>
                         <div className="buttons">
-                          <button className="sqr-btn" type="submit">Continue</button>
+                          <button onClick={()=>addComment()} className="sqr-btn" type="button">Continue</button>
                         </div>
                       </form> 
   )

@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom"
+import { useContext } from "react";
+import { DataContext } from "../../context/DataProvider";
 
 function Header() {
+  const {loggedInUser,logoutUser,cartItems,openModal} = useContext(DataContext);
+ 
   return (
  
         <header>
@@ -24,8 +28,26 @@ function Header() {
                     </a>
                     <div className="dropdown-menu" aria-labelledby="myaccount">
                       <Link to={"/myacount"} className="dropdown-item" >my account</Link>
-                      <Link to={"/acount"} className="dropdown-item"> login</Link>
-                      <Link to={"/acount"} className="dropdown-item">register</Link>
+                      {
+                        loggedInUser ?
+                        (
+                        <>
+                        <a className="dropdown-item" >{loggedInUser.name}</a>
+                        <Link onClick={()=>logoutUser()} className="dropdown-item">Logout</Link>
+                        
+                        </>
+                        )
+
+                        :
+                        (
+                          <>
+                          <Link to={"/acount"} className="dropdown-item"> login</Link>
+                        <Link to={"/acount"} className="dropdown-item">register</Link>
+                          </>
+                          
+                        )
+                      }
+                      
                     </div>
                   </div>
                 </li>
@@ -72,13 +94,13 @@ function Header() {
         <div className="col-lg-3 col-md-6 col-6 ms-auto">
           <div className="header-setting-option setting-style-2 white-text">
             <div className="search-wrap">
-              <button type="submit" className="search-trigger"><i className="ion-ios-search-strong" /></button>
+              <button type="submit" onClick={()=>openModal} className="search-trigger"><i className="ion-ios-search-strong" /></button>
             </div>
             <div className="header-mini-cart">
-              <div className="mini-cart-btn">
+              <Link to={"/sepet"} className="mini-cart-btn">
                 <i className="ion-bag" />
-                <span className="cart-notification">2</span>
-              </div>
+                <span className="cart-notification">{cartItems.length}</span>
+              </Link>
               <ul className="cart-list">
                 <li>
                   <div className="cart-img">
@@ -134,7 +156,9 @@ function Header() {
       <span>close</span>
     </div>
   </div>
+  
 </header>
+
   )
 }
 

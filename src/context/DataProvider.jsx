@@ -9,6 +9,19 @@ function DataProvider({children}) {
     const [categoriesData,setCategoriesData]=useState([])
     const [userData,setUserData]=useState([])
     const [cartItems, setCartItems] = useState([]);
+    const [loggedInUser, setLoggedInUser] = useState(null);
+    const [subTotal, setSubTotal]=useState(0)
+    const[newComment,setNewComment]=useState("")
+    const [productIdsi,setProductIdsi]=useState()
+    //modal
+    const [modalOpen, setModalOpen] = useState(false);
+    const openModal = () => {
+      setModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setModalOpen(false);
+    };
     const addToCart = (product) => {
       setCartItems([...cartItems, product]);
       
@@ -17,7 +30,32 @@ function DataProvider({children}) {
       const updatedCart = cartItems.filter(item => item.id !== productId);
       setCartItems(updatedCart);
     };
+//login işlemi
+const logoutUser = () => {
+  localStorage.removeItem('loggedInUser');
+  setLoggedInUser(null);
+};
+useEffect(() => {
+  const storedUser = localStorage.getItem('loggedInUser');
+  if (storedUser) {
+    setLoggedInUser(JSON.parse(storedUser));
+  }
+}, []);
+  const loginUser = (username, password) => {
+   
+    const foundUser = userData.find(
+      (user) => user.email == username && user.password == password
+    );
 
+    if (foundUser) {
+      localStorage.setItem('loggedInUser', JSON.stringify(foundUser));
+      setLoggedInUser(foundUser);
+      
+    } else {
+      
+      alert("Giriş hatalı")
+    }
+  }
     useEffect(()=>{
         // eslint-disable-next-line no-unused-vars
         const fetchData =  async () =>{
@@ -69,6 +107,52 @@ function DataProvider({children}) {
           }
           fetchData4()
         },[])
+        //product comment
+        const addComment = async () => {
+          try {
+            const response = await fetch(`http://localhost:3000/Product/${productIdsi}`);
+            if (!response.ok) {
+              throw new Error('Ürün bilgisi alınamadı.');
+            }
+        
+            const productData = await response.json();
+            const currentComments = productData.comment || []; // Mevcut yorumlar
+        
+            const updatedComments = [
+              ...currentComments,
+              {
+                id: Math.floor(Math.random() * 1000), // Yeni yorum ID'si
+                description: newComment,
+                userName: loggedInUser.name, // Kullanıcı adı
+                userEmail: loggedInUser.email, // Kullanıcı e-postası
+                date: new Date().toISOString().split('T')[0], // Yorum tarihi
+              },
+            ];
+        
+            const updateResponse = await fetch(`http://localhost:3000/Product/${productIdsi}`, {
+              method: 'PATCH', // veya 'POST' olarak değiştirin
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                comment: updatedComments, // Güncellenmiş yorum listesi
+              }),
+            });
+        
+            if (!updateResponse.ok) {
+              throw new Error('Yorum eklenemedi.');
+            }
+        
+            // Yorum ekledikten sonra gereken işlemleri yapabilirsiniz
+          } catch (error) {
+            console.error('Hata:', error);
+          }
+        
+            
+          
+          
+        };
+
 
   return (
     <DataContext.Provider
@@ -79,7 +163,18 @@ function DataProvider({children}) {
       userData,
       cartItems,
       addToCart,
-      removeFromCart
+      removeFromCart,
+      loginUser,
+      loggedInUser,
+      logoutUser,
+      subTotal,
+      setSubTotal,
+      setProductIdsi,
+      addComment,
+      setNewComment,
+      openModal,
+      closeModal,
+      modalOpen
     }}
     >
         {children}

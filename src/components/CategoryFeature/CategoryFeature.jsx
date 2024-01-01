@@ -1,8 +1,9 @@
 import { DataContext } from "../../context/DataProvider";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 function CategoryFeature() {
-  const {categoriesData,productData} = useContext(DataContext);
+  const {categoriesData,productData,addToCart} = useContext(DataContext);
 
   return (
     <div className="feature-category-vertical pt-100 pb-50 pt-sm-58 pb-sm-10">
@@ -45,9 +46,9 @@ function CategoryFeature() {
                       <div key={i} className="col-4">
                       <div className="product-item item-black mb-20">
                         <div className="product-thumb">
-                          <a href="product-details.html">
+                          <Link to={`/productdetails/${item.id}`}>
                             <img src={item.image} alt="product image" />
-                          </a>
+                          </Link>
                           <div className="box-label">
                             <div className="product-label new">
                               <span>new</span>
@@ -64,10 +65,10 @@ function CategoryFeature() {
                         </div>
                         <div className="product-description text-center">
                           <div className="manufacturer">
-                            <p><a href="product-details.html">Fashion Manufacturer</a></p>
+                            <p><Link to={`/productdetails/${item.id}`}>Fashion Manufacturer</Link></p>
                           </div>
                           <div className="product-name">
-                            <h3><a href="product-details.html">{item.title}</a></h3>
+                            <h3><Link to={`/productdetails/${item.id}`}>{item.title}</Link></h3>
                           </div>
                           <div className="price-box">
                             <span className="regular-price">${item.price- (item.price/item.indirim)}</span>
@@ -75,7 +76,7 @@ function CategoryFeature() {
                           </div>
                           <div className="hover-box text-center">
                             <div className="product-btn">
-                              <a href="#"><i className="ion-bag" />Add to cart</a>
+                              <a onClick={()=>addToCart(item)}><i className="ion-bag" />Add to cart</a>
                             </div>
                             <div className="ratings">
                               <span><i className="fa fa-star" /></span>
@@ -106,9 +107,9 @@ function CategoryFeature() {
                       <div key={i} className="col-4">
                       <div className="product-item item-black mb-20">
                         <div className="product-thumb">
-                          <a href="product-details.html">
+                          <Link to={`/productdetails/${item.id}`}>
                             <img src={item.image} alt="product image" />
-                          </a>
+                          </Link>
                           <div className="box-label">
                             <div className="product-label new">
                               <span>new</span>
@@ -125,10 +126,10 @@ function CategoryFeature() {
                         </div>
                         <div className="product-description text-center">
                           <div className="manufacturer">
-                            <p><a href="product-details.html">Fashion Manufacturer</a></p>
+                            <p><Link to={`/productdetails/${item.id}`}>Fashion Manufacturer</Link></p>
                           </div>
                           <div className="product-name">
-                            <h3><a href="product-details.html">{item.title}</a></h3>
+                            <h3><Link to={`/productdetails/${item.id}`}>{item.title}</Link></h3>
                           </div>
                           <div className="price-box">
                             <span className="regular-price">${item.price- (item.price/item.indirim)}</span>
@@ -136,7 +137,7 @@ function CategoryFeature() {
                           </div>
                           <div className="hover-box text-center">
                             <div className="product-btn">
-                              <a href="#"><i className="ion-bag" />Add to cart</a>
+                              <a onClick={()=>addToCart(item)}><i className="ion-bag" />Add to cart</a>
                             </div>
                             <div className="ratings">
                               <span><i className="fa fa-star" /></span>
@@ -168,9 +169,9 @@ function CategoryFeature() {
                       <div key={i} className="col-4">
                       <div className="product-item item-black mb-20">
                         <div className="product-thumb">
-                          <a href="product-details.html">
+                          <Link to={`/productdetails/${item.id}`}>
                             <img src={item.image} alt="product image" />
-                          </a>
+                          </Link>
                           <div className="box-label">
                             <div className="product-label new">
                               <span>new</span>
@@ -187,10 +188,10 @@ function CategoryFeature() {
                         </div>
                         <div className="product-description text-center">
                           <div className="manufacturer">
-                            <p><a href="product-details.html">Fashion Manufacturer</a></p>
+                            <p><Link to={`/productdetails/${item.id}`}>Fashion Manufacturer</Link></p>
                           </div>
                           <div className="product-name">
-                            <h3><a href="product-details.html">{item.title}</a></h3>
+                            <h3><Link to={`/productdetails/${item.id}`}>{item.title}</Link></h3>
                           </div>
                           <div className="price-box">
                             <span className="regular-price">${item.price- (item.price/item.indirim)}</span>
@@ -198,7 +199,7 @@ function CategoryFeature() {
                           </div>
                           <div className="hover-box text-center">
                             <div className="product-btn">
-                              <a href="#"><i className="ion-bag" />Add to cart</a>
+                              <a onClick={()=>addToCart(item)}><i className="ion-bag" />Add to cart</a>
                             </div>
                             <div className="ratings">
                               <span><i className="fa fa-star" /></span>

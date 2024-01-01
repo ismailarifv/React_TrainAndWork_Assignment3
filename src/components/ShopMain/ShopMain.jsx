@@ -50,7 +50,7 @@ function ShopMain() {
                     <div key={i} className="col-xl-4 col-lg-6 col-md-4 col-sm-6">
                   <div className="product-item mb-20">
                     <div className="product-thumb">
-                      <Link to={`/productdetails/${item.id}`} href="product-details.html">
+                      <Link to={`/productdetails/${item.id}`} >
                         <img src={item.image} alt="product image" />
                       </Link>
                       <div className="box-label">
@@ -69,10 +69,10 @@ function ShopMain() {
                     </div>
                     <div className="product-description text-center">
                       <div className="manufacturer">
-                        <p><a href="product-details.html">Fashion Manufacturer</a></p>
+                        <p><Link to={`/productdetails/${item.id}`}>Fashion Manufacturer</Link></p>
                       </div>
                       <div className="product-name">
-                        <h3><a href="product-details.html">{item.title}</a></h3>
+                        <h3><Link to={`/productdetails/${item.id}`}>{item.title}</Link></h3>
                       </div>
                       <div className="price-box">
                         <span className="regular-price">${item.price - (item.price/item.indirim)}</span>

@@ -1,5 +1,6 @@
 import { DataContext } from "../../context/DataProvider";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 function BlogArea() {
   const {blogData} = useContext(DataContext);
@@ -34,13 +35,13 @@ function BlogArea() {
                   </div>
                 </div>
                 <div className="blog-thumb img-full">
-                  <a href="blog-details.html">
+                  <Link to={`/blogdetails/${item.id}`}>
                     <img src={item.image} alt="" />
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="blog-content">
-                <h4><a href="blog-details.html">{item.title}</a></h4>
+                <h4><Link to={`/blogdetails/${item.id}`}>{item.title}</Link></h4>
                 <p>
                  {item.short_desc}...
                 </p>

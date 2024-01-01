@@ -1,7 +1,8 @@
 import { DataContext } from "../../context/DataProvider";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 function Products() {
-  const {productData} = useContext(DataContext);
+  const {productData,addToCart} = useContext(DataContext);
   const firstThreeItems = productData.slice(0, 3);
   return (
     <div className="page-section pt-100 pb-50 pt-md-92 pt-sm-56 pb-sm-10">
@@ -22,9 +23,9 @@ function Products() {
             <div key={i} className="col-4">
         <div className="product-item item-black mb-20">
           <div className="product-thumb">
-            <a href="product-details.html">
+            <Link to={`/productdetails/${item.id}`}>
               <img src={item.image} alt="product image" />
-            </a>
+            </Link>
             <div className="box-label">
               <div className="product-label new">
                 <span>new</span>
@@ -41,10 +42,10 @@ function Products() {
           </div>
           <div className="product-description text-center">
             <div className="manufacturer">
-              <p><a href="product-details.html">Fashion Manufacturer</a></p>
+              <p><Link to={`/productdetails/${item.id}`}>Fashion Manufacturer</Link></p>
             </div>
             <div className="product-name">
-              <h3><a href="product-details.html">{item.title}</a></h3>
+              <h3><Link to={`/productdetails/${item.id}`}>{item.title}</Link></h3>
             </div>
             <div className="price-box">
               <span className="regular-price">${item.price - (item.price/item.indirim)}</span>
@@ -52,7 +53,7 @@ function Products() {
             </div>
             <div className="hover-box text-center">
               <div className="product-btn">
-                <a href="#"><i className="ion-bag" />Add to cart</a>
+                <a onClick={()=>addToCart(item)}><i className="ion-bag" />Add to cart</a>
               </div>
               <div className="ratings">
                 <span><i className="fa fa-star" /></span>

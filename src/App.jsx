@@ -22,6 +22,8 @@ import WishListPage from './pages/WishListPage'
 
 
 
+import { DataContext } from "./context/DataProvider";
+import { useContext } from "react";
 
 
 
@@ -29,11 +31,12 @@ import WishListPage from './pages/WishListPage'
 
 
 function App() {
-  
-
+  const {modalOpen} = useContext(DataContext);
+  console.log(modalOpen);
   return (
     <>
     <Header/>
+    
     <Routes>
       <Route path='/' element={<HomePage/>}/>
       <Route path='acount' element={<AccountPage/>}/>

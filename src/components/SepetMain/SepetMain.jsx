@@ -1,6 +1,24 @@
-
+import { DataContext } from "../../context/DataProvider";
+import { useContext,useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function SepetMain() {
+
+  const {cartItems,removeFromCart,subTotal,setSubTotal} = useContext(DataContext);
+
+  
+  useEffect(() => {
+    const calculateTotal = () => {
+      const total = cartItems.reduce((acc, item) => {
+        return acc + item.price;
+      }, 0);
+      setSubTotal(total);
+    };
+
+    calculateTotal();
+  }, [cartItems]);
+  
+
   return (
     <main style={{backgroundColor:"white"}}>
   <div className="cart-main-wrapper pt-100 pb-100 pt-sm-58 pb-sm-58">
@@ -20,63 +38,26 @@ function SepetMain() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="pro-thumbnail"><a href="#"><img className="img-fluid" src="src/assets/img/product/product-1.jpg" alt="Product" /></a></td>
-                  <td className="pro-title"><a href="#">Endeavor Daytrip</a></td>
-                  <td className="pro-price"><span>$295.00</span></td>
-                  <td className="pro-quantity">
-                    <div className="pro-qty"><input type="text" defaultValue={1} /></div>
-                  </td>
-                  <td className="pro-subtotal"><span>$295.00</span></td>
-                  <td className="pro-remove"><a href="#"><i className="fa fa-trash-o" /></a></td>
-                </tr>
-                <tr>
-                  <td className="pro-thumbnail"><a href="#"><img className="img-fluid" src="src/assets/img/product/product-2.png" alt="Product" /></a></td>
-                  <td className="pro-title"><a href="#">Joust Duffle Bags</a></td>
-                  <td className="pro-price"><span>$275.00</span></td>
-                  <td className="pro-quantity">
-                    <div className="pro-qty"><input type="text" defaultValue={2} /></div>
-                  </td>
-                  <td className="pro-subtotal"><span>$550.00</span></td>
-                  <td className="pro-remove"><a href="#"><i className="fa fa-trash-o" /></a></td>
-                </tr>
-                <tr>
-                  <td className="pro-thumbnail"><a href="#"><img className="img-fluid" src="src/assets/img/product/product-3.jpg" alt="Product" /></a></td>
-                  <td className="pro-title"><a href="#">Compete Track Totes</a></td>
-                  <td className="pro-price"><span>$295.00</span></td>
-                  <td className="pro-quantity">
-                    <div className="pro-qty">
-                      <input type="text" defaultValue={1} />
-                    </div>
-                  </td>
-                  <td className="pro-subtotal"><span>$295.00</span></td>
-                  <td className="pro-remove"><a href="#"><i className="fa fa-trash-o" /></a></td>
-                </tr>
-                <tr>
-                  <td className="pro-thumbnail"><a href="#"><img className="img-fluid" src="src/assets/img/product/product-4.jpg" alt="Product" /></a></td>
-                  <td className="pro-title"><a href="#">Bess Yoga Shorts</a></td>
-                  <td className="pro-price"><span>$110.00</span></td>
-                  <td className="pro-quantity">
-                    <div className="pro-qty">
-                      <input type="text" defaultValue={3} />
-                    </div>
-                  </td>
-                  <td className="pro-subtotal"><span>$110.00</span></td>
-                  <td className="pro-remove"><a href="#"><i className="fa fa-trash-o" /></a></td>
-                </tr>
+                {
+                  cartItems.map((item,i)=>{
+                    return(
+                      <tr key={i}>
+                      <td className="pro-thumbnail"><a href="#"><img className="img-fluid" src={item.image} alt="Product" /></a></td>
+                      <td className="pro-title"><a href="#">{item.title}</a></td>
+                      <td className="pro-price"><span>${item.price-(item.price/item.indirim)}</span></td>
+                      <td className="pro-quantity">
+                        <div className="pro-qty"><input type="text" defaultValue={1} /></div>
+                      </td>
+                      <td className="pro-subtotal"><span>${item.price-(item.price/item.indirim)}</span></td>
+                      <td className="pro-remove"><a onClick={()=>removeFromCart(item.id)} href="#"><i className="fa fa-trash-o" /></a></td>
+                    </tr>
+                    )
+                  })
+                }
+                
+                
               </tbody>
             </table>
-          </div>
-          <div className="cart-update-option d-block d-md-flex justify-content-between">
-            <div className="apply-coupon-wrapper">
-              <form action="#" method="post" className=" d-block d-md-flex">
-                <input type="text" placeholder="Enter Your Coupon Code" required />
-                <button className="sqr-btn">Apply Coupon</button>
-              </form>
-            </div>
-            <div className="cart-update mt-sm-16">
-              <a href="#" className="sqr-btn">Update Cart</a>
-            </div>
           </div>
         </div>
       </div>
@@ -89,7 +70,7 @@ function SepetMain() {
                 <table className="table">
                   <tbody><tr>
                       <td>Sub Total</td>
-                      <td>$230</td>
+                      <td>${subTotal}</td>
                     </tr>
                     <tr>
                       <td>Shipping</td>
@@ -97,12 +78,12 @@ function SepetMain() {
                     </tr>
                     <tr className="total">
                       <td>Total</td>
-                      <td className="total-amount">$300</td>
+                      <td className="total-amount">${subTotal+70}</td>
                     </tr>
                   </tbody></table>
               </div>
             </div>
-            <a href="checkout.html" className="sqr-btn d-block">Proceed To Checkout</a>
+            <Link to={"/odeme"} className="sqr-btn d-block">Proceed To Checkout</Link>
           </div>
         </div>
       </div>

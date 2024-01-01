@@ -4,9 +4,9 @@ import { DataContext } from "../../context/DataProvider";
 import { useContext } from "react";
 import { useParams } from 'react-router-dom';
 function BlogDetail() {
-  const {productData} = useContext(DataContext);
+  const {blogData} = useContext(DataContext);
   const {id}=useParams()
-  const foundItem = productData.find((item) => {
+  const foundItem = blogData.find((item) => {
     return item.id == id;
   });
   return (
@@ -31,7 +31,7 @@ function BlogDetail() {
                   <div className="blog-thumb">
                     <div className="blog-gallery-slider slider-arrow-style slider-arrow-style__style-2">
                       <div className="blog-single-slide">
-                        <img src={foundItem.image} alt="" />
+                        <img src={"/"+foundItem.image} alt="" />
                       </div>
                      
                     </div>

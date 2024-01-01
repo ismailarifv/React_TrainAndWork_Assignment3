@@ -1,16 +1,32 @@
-
-
+import { useState,useContext } from "react";
+import { DataContext } from "../../context/DataProvider";
+import { useNavigate } from "react-router-dom";
 function Login() {
+  const {loginUser,loggedInUser} = useContext(DataContext);
+ 
+  const [email,setEmail]=useState("")
+  const [password,setPassword]=useState("")
+  const navigate = useNavigate();
+ function logins() {
+  loginUser(email,password)
+  if (loggedInUser) {
+    alert("Giriş başarılı")
+  navigate('/');
+  }
+  
+  setEmail("")
+  setPassword("")
+ }
   return (
     <div className="col-lg-6">
             <div className="login-reg-form-wrap  pr-lg-50">
               <h2>Sign In</h2>
-              <form action="#" method="post">
+              <div>
                 <div className="single-input-item">
-                  <input type="email" placeholder="Email or Username" required />
+                  <input onChange={(x)=>setEmail(x.target.value)} type="email" placeholder="Email" required value={email} />
                 </div>
                 <div className="single-input-item">
-                  <input type="password" placeholder="Enter your Password" required />
+                  <input onChange={(x)=>setPassword(x.target.value)} type="password" placeholder="Enter your Password" required value={password}/>
                 </div>
                 <div className="single-input-item">
                   <div className="login-reg-form-meta d-flex align-items-center justify-content-between">
@@ -23,10 +39,10 @@ function Login() {
                     <a href="#" className="forget-pwd">Forget Password?</a>
                   </div>
                 </div>
-                <div className="single-input-item">
-                  <button className="sqr-btn">Login</button>
+                <div className="single-input-item"> 
+                  <button type="button" onClick={()=>logins() } className="sqr-btn">Login</button>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
   )

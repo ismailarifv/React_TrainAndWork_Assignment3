@@ -4,11 +4,12 @@ import { useParams } from 'react-router-dom';
 import BlogComment from "../ProductComment/ProductComment";
 
 function ProductDetail() {
-  const {productData} = useContext(DataContext);
+  const {productData,addToCart} = useContext(DataContext);
   const {id}=useParams()
   const foundItem = productData.find((item) => {
     return item.id == id;
   });
+  
   return (
     <main style={{backgroundColor:"white"}}>
   <div className="product-details-wrapper pt-100 pb-14 pt-sm-58">
@@ -50,7 +51,7 @@ function ProductDetail() {
                       <div className="pro-qty"><input type="text" defaultValue={1} /></div>
                     </div>
                     <div className="product-btn product-btn__color">
-                      <a href="#"><i className="ion-bag" />Add to cart</a>
+                      <a onClick={()=>addToCart(foundItem)}><i className="ion-bag" />Add to cart</a>
                     </div>
                   </div>
                   <div className="availability mb-20">

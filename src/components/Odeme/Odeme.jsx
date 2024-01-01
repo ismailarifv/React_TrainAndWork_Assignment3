@@ -1,6 +1,8 @@
-
+import { DataContext } from "../../context/DataProvider";
+import { useContext } from "react";
 
 function Odeme() {
+  const {cartItems,subTotal} = useContext(DataContext);
   return (
     <main style={{backgroundColor:"white"}}>
   <div className="checkout-page-wrapper pt-100 pb-90 pt-sm-58 pb-sm-54">
@@ -172,23 +174,22 @@ function Odeme() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td><a href="single-product.html">Suscipit Vestibulum <strong> × 1</strong></a></td>
-                      <td>$165.00</td>
+                    {
+                      cartItems &&
+                      cartItems.map((item,i)=>{
+                        return(
+                          <tr key={i}>
+                      <td><a href="single-product.html">{item.title} <strong> × 1</strong></a></td>
+                      <td>${item.price}</td>
                     </tr>
-                    <tr>
-                      <td><a href="single-product.html">Ami Vestibulum suscipit <strong> × 4</strong></a></td>
-                      <td>$165.00</td>
-                    </tr>
-                    <tr>
-                      <td><a href="single-product.html">Vestibulum suscipit <strong> × 2</strong></a></td>
-                      <td>$165.00</td>
-                    </tr>
+                        )
+                      })
+                    }
                   </tbody>
                   <tfoot>
                     <tr>
                       <td>Sub Total</td>
-                      <td><strong>$400</strong></td>
+                      <td><strong>${subTotal}</strong></td>
                     </tr>
                     <tr>
                       <td>Shipping</td>
@@ -211,7 +212,7 @@ function Odeme() {
                     </tr>
                     <tr>
                       <td>Total Amount</td>
-                      <td><strong>$470</strong></td>
+                      <td><strong>${subTotal+70}</strong></td>
                     </tr>
                   </tfoot>
                 </table>
