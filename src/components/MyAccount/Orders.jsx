@@ -1,6 +1,26 @@
-
-
+import { Link } from "react-router-dom";
+import { DataContext } from "../../context/DataProvider";
+import { useContext,useEffect} from "react";
 function Orders() {
+  const {order,setOrder,loggedInUser} = useContext(DataContext);
+  
+  useEffect(()=>{
+    const orders =  async () =>{
+      try {
+        const response = await fetch("http://localhost:5020/api/Order");
+        const result = await response.json();
+        setOrder(result)
+      } catch (error) {
+        console.error("Error",error)
+      }
+      
+    
+    }
+    orders()
+    
+  },[])
+
+ 
   return (
     <div className="tab-pane fade" id="orders" role="tabpanel">
                       <div className="myaccount-content">
@@ -17,27 +37,26 @@ function Orders() {
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <td>1</td>
-                                <td>Aug 22, 2022</td>
-                                <td>Pending</td>
-                                <td>$3000</td>
-                                <td><a href="cart.html" className="check-btn sqr-btn ">View</a></td>
-                              </tr>
-                              <tr>
-                                <td>2</td>
-                                <td>July 22, 2022</td>
-                                <td>Approved</td>
-                                <td>$200</td>
-                                <td><a href="cart.html" className="check-btn sqr-btn ">View</a></td>
-                              </tr>
-                              <tr>
-                                <td>3</td>
-                                <td>June 12, 2017</td>
-                                <td>On Hold</td>
-                                <td>$990</td>
-                                <td><a href="cart.html" className="check-btn sqr-btn ">View</a></td>
-                              </tr>
+                              {order &&
+                              order.map((item,i)=>{
+                                if (item.userId == loggedInUser.id) {
+                                  return(
+                                 
+                                    <tr key={i}>
+                                    <td>{i+1}</td>
+                                    <td>{item.createDate.split('T')[0]}</td>
+                                    <td>Approved</td>
+                                    
+                                    <td key={i}>$100</td>
+                                    <h3></h3>
+                                    <td><Link to={`/orderView/${item.id}`}>View</Link></td>
+                                  </tr>
+                                    )
+                                }
+                                
+                              })
+                              }
+                            
                             </tbody>
                           </table>
                         </div>

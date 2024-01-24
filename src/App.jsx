@@ -24,6 +24,7 @@ import WishListPage from './pages/WishListPage'
 
 import { DataContext } from "./context/DataProvider";
 import { useContext } from "react";
+import OrderViewPage from './pages/OrderViewPage'
 
 
 
@@ -46,6 +47,7 @@ function App() {
       <Route path='myacount' element={<MyAccountPage/>}/>
       <Route path='odeme' element={<OdemePage/>}/>
       <Route path='productdetails/:id' element={<ProductDetailsPage/>}/>
+      <Route path='orderView/:id' element={<OrderViewPage/>}/>
       <Route path='sepet' element={<SepetPage/>}/>
       <Route path='shop' element={<ShopPage/>}/>
       <Route path='wishlist' element={<WishListPage/>}/>

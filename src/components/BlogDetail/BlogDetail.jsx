@@ -1,5 +1,4 @@
-import CommentDo from "../CommentDo/CommentDo"
-import CommenList from "../CommentList/CommenList"
+
 import { DataContext } from "../../context/DataProvider";
 import { useContext } from "react";
 import { useParams } from 'react-router-dom';
@@ -11,10 +10,11 @@ function BlogDetail() {
   });
   return (
     <main style={{backgroundColor:"white"}}>
+      
   <div className="blog-main-wrapper pt-100 pb-100 pt-sm-58 pb-sm-58">
     <div className="container">
       <div className="row">
-        
+      <h1 className="text-center" style={{color:"black"}}>{foundItem.name}</h1>
         <div className="col-lg-12 order-1">
           <div className="blog-wrapper">
             <div className="blog-item-single">
@@ -59,8 +59,7 @@ function BlogDetail() {
               </article>
             </div>
           </div>
-          <CommenList/>
-          <CommentDo/>
+          
         </div>
       </div>
     </div>

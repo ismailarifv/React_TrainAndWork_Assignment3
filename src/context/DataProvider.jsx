@@ -13,6 +13,9 @@ function DataProvider({children}) {
     const [subTotal, setSubTotal]=useState(0)
     const[newComment,setNewComment]=useState("")
     const [productIdsi,setProductIdsi]=useState()
+    const [order,setOrder]=useState([])
+    const [orderProductData,setOrderProductData]=useState([])
+    
     //modal
     const [modalOpen, setModalOpen] = useState(false);
     const openModal = () => {
@@ -60,9 +63,10 @@ useEffect(() => {
         // eslint-disable-next-line no-unused-vars
         const fetchData =  async () =>{
           try {
-            const response = await fetch("http://localhost:3000/Product");
+            const response = await fetch("http://localhost:5020/api/Product");
             const result = await response.json();
             setProductData(result)
+            console.log(productData);
           } catch (error) {
             console.error("Error",error)
           }
@@ -70,9 +74,22 @@ useEffect(() => {
         
         }
         fetchData()
+        const orderProductData =  async () =>{
+          try {
+            const response = await fetch("http://localhost:5020/api/OrderProduct");
+            const result = await response.json();
+            setOrderProductData(result)
+            console.log(productData);
+          } catch (error) {
+            console.error("Error",error)
+          }
+          
+        
+        }
+        orderProductData()
         const fetchData2 =  async () =>{
             try {
-              const response = await fetch("http://localhost:3000/Blogs");
+              const response = await fetch("http://localhost:5020/api/Blog");
               const result = await response.json();
               setBlogData(result)
             } catch (error) {
@@ -84,7 +101,7 @@ useEffect(() => {
           fetchData2()
           const fetchData3 =  async () =>{
             try {
-              const response = await fetch("http://localhost:3000/Categories");
+              const response = await fetch("http://localhost:5020/api/Category");
               const result = await response.json();
               setCategoriesData(result)
             } catch (error) {
@@ -96,7 +113,7 @@ useEffect(() => {
           fetchData3()
           const fetchData4 =  async () =>{
             try {
-              const response = await fetch("http://localhost:3000/Users");
+              const response = await fetch("http://localhost:5020/api/User");
               const result = await response.json();
               setUserData(result)
             } catch (error) {
@@ -110,7 +127,7 @@ useEffect(() => {
         //product comment
         const addComment = async () => {
           try {
-            const response = await fetch(`http://localhost:3000/Product/${productIdsi}`);
+            const response = await fetch(`http://localhost:5020/api/Product/${productIdsi}`);
             if (!response.ok) {
               throw new Error('Ürün bilgisi alınamadı.');
             }
@@ -129,7 +146,7 @@ useEffect(() => {
               },
             ];
         
-            const updateResponse = await fetch(`http://localhost:3000/Product/${productIdsi}`, {
+            const updateResponse = await fetch(`http://localhost:5020/api/Product${productIdsi}`, {
               method: 'PATCH', // veya 'POST' olarak değiştirin
               headers: {
                 'Content-Type': 'application/json',
@@ -159,6 +176,7 @@ useEffect(() => {
     value={{
       productData,
       blogData,
+      setCartItems,
       categoriesData ,
       userData,
       cartItems,
@@ -174,7 +192,10 @@ useEffect(() => {
       setNewComment,
       openModal,
       closeModal,
-      modalOpen
+      modalOpen,
+      order,
+      setOrder,
+      orderProductData
     }}
     >
         {children}

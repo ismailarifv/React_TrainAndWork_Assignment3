@@ -25,7 +25,7 @@ function CategoryFeature() {
               categoriesData.map((item,i)=>{
                 return(
                   <li key={i}>
-                  <a data-bs-toggle="tab" href={"#tab_"+item.id}>{item.title}</a>
+                  <a data-bs-toggle="tab" href={"#tab_"+item.id}>{item.name}</a>
                 </li>
                 )
               })
@@ -41,7 +41,7 @@ function CategoryFeature() {
               {
                 productData && 
                 productData.map((item,i)=>{
-                  if(item.categoryid == 1){
+                  if(item.categoryId == 1){
                     return(
                       <div key={i} className="col-4">
                       <div className="product-item item-black mb-20">
@@ -54,7 +54,7 @@ function CategoryFeature() {
                               <span>new</span>
                             </div>
                             <div className="product-label discount">
-                              <span>-{item.indirim}%</span>
+                              <span>-{item.discount}%</span>
                             </div>
                           </div>
                           <div className="product-action-link">
@@ -68,10 +68,10 @@ function CategoryFeature() {
                             <p><Link to={`/productdetails/${item.id}`}>Fashion Manufacturer</Link></p>
                           </div>
                           <div className="product-name">
-                            <h3><Link to={`/productdetails/${item.id}`}>{item.title}</Link></h3>
+                            <h3><Link to={`/productdetails/${item.id}`}>{item.name}</Link></h3>
                           </div>
                           <div className="price-box">
-                            <span className="regular-price">${item.price- (item.price/item.indirim)}</span>
+                            <span className="regular-price">${item.price- (item.price/item.discount)}</span>
                             <span className="old-price"><del>${item.price}</del></span>
                           </div>
                           <div className="hover-box text-center">
@@ -102,7 +102,7 @@ function CategoryFeature() {
             {
                 productData && 
                 productData.map((item,i)=>{
-                  if(item.categoryid == 2){
+                  if(item.categoryId == 2){
                     return(
                       <div key={i} className="col-4">
                       <div className="product-item item-black mb-20">
@@ -115,7 +115,7 @@ function CategoryFeature() {
                               <span>new</span>
                             </div>
                             <div className="product-label discount">
-                              <span>-{item.indirim}%</span>
+                              <span>-{item.discount}%</span>
                             </div>
                           </div>
                           <div className="product-action-link">
@@ -129,10 +129,10 @@ function CategoryFeature() {
                             <p><Link to={`/productdetails/${item.id}`}>Fashion Manufacturer</Link></p>
                           </div>
                           <div className="product-name">
-                            <h3><Link to={`/productdetails/${item.id}`}>{item.title}</Link></h3>
+                            <h3><Link to={`/productdetails/${item.id}`}>{item.name}</Link></h3>
                           </div>
                           <div className="price-box">
-                            <span className="regular-price">${item.price- (item.price/item.indirim)}</span>
+                            <span className="regular-price">${item.price- (item.price/item.discount)}</span>
                             <span className="old-price"><del>${item.price}</del></span>
                           </div>
                           <div className="hover-box text-center">
@@ -164,7 +164,7 @@ function CategoryFeature() {
             {
                 productData && 
                 productData.map((item,i)=>{
-                  if(item.categoryid == 3){
+                  if(item.categoryId == 3){
                     return(
                       <div key={i} className="col-4">
                       <div className="product-item item-black mb-20">
@@ -177,7 +177,7 @@ function CategoryFeature() {
                               <span>new</span>
                             </div>
                             <div className="product-label discount">
-                              <span>-{item.indirim}%</span>
+                              <span>-{item.discount}%</span>
                             </div>
                           </div>
                           <div className="product-action-link">
@@ -194,7 +194,7 @@ function CategoryFeature() {
                             <h3><Link to={`/productdetails/${item.id}`}>{item.title}</Link></h3>
                           </div>
                           <div className="price-box">
-                            <span className="regular-price">${item.price- (item.price/item.indirim)}</span>
+                            <span className="regular-price">${item.price- (item.price/item.discount)}</span>
                             <span className="old-price"><del>${item.price}</del></span>
                           </div>
                           <div className="hover-box text-center">

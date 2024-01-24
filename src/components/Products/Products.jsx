@@ -31,7 +31,7 @@ function Products() {
                 <span>new</span>
               </div>
               <div className="product-label discount">
-                <span>-{item.indirim}%</span>
+                <span>-{item.discount}%</span>
               </div>
             </div>
             <div className="product-action-link">
@@ -48,7 +48,7 @@ function Products() {
               <h3><Link to={`/productdetails/${item.id}`}>{item.title}</Link></h3>
             </div>
             <div className="price-box">
-              <span className="regular-price">${item.price - (item.price/item.indirim)}</span>
+              <span className="regular-price">${item.price - (item.price/item.discount)}</span>
               <span className="old-price"><del>${item.price}</del></span>
             </div>
             <div className="hover-box text-center">

@@ -43,12 +43,12 @@ function SepetMain() {
                     return(
                       <tr key={i}>
                       <td className="pro-thumbnail"><a href="#"><img className="img-fluid" src={item.image} alt="Product" /></a></td>
-                      <td className="pro-title"><a href="#">{item.title}</a></td>
-                      <td className="pro-price"><span>${item.price-(item.price/item.indirim)}</span></td>
+                      <td className="pro-title"><a href="#">{item.name}</a></td>
+                      <td className="pro-price"><span>${item.price-(item.price/item.discount)}</span></td>
                       <td className="pro-quantity">
                         <div className="pro-qty"><input type="text" defaultValue={1} /></div>
                       </td>
-                      <td className="pro-subtotal"><span>${item.price-(item.price/item.indirim)}</span></td>
+                      <td className="pro-subtotal"><span>${item.price-(item.price/item.discount)}</span></td>
                       <td className="pro-remove"><a onClick={()=>removeFromCart(item.id)} href="#"><i className="fa fa-trash-o" /></a></td>
                     </tr>
                     )

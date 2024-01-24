@@ -1,466 +1,206 @@
 {
   "Categories": [
     {
-      "id": 1,
-      "title": "Classic Watches",
-      "desc": "Watches products",
-      "image_slug": "electronics-image"
+      "Id": 1,
+      "name": "Classic Watches",
+      "Description": "Watches products",
+      "isStatus":true,
+      "isDelete":false
     },
     {
-      "id": 2,
-      "title": "Sport Watches",
-      "desc": "Watches products",
-      "image_slug": "clothing-image"
+      "Id": 2,
+      "name": "Sport Watches",
+      "Description": "Watches products",
+      "isStatus":true,
+      "isDelete":false
     },
     {
-      "id": 3,
-      "title": "Child Watches",
-      "desc": "Watches products",
-      "image_slug": "clothing-image"
+      "Id": 3,
+      "name": "Child Watches",
+      "Description": "Watches products",
+      "IsStatus":true,
+      "IsDelete":false
     }
   ],
   "Product": [
     {
-      "id": 1,
-      "title": "ENDEAVOR DAYTRIP",
-      "categoryid": 1,
-      "image": "src/assets/img/product/product-w1.jpg",
-      "gallery": [
-        "image1.jpg",
-        "image2.jpg"
-      ],
-      "indirim": 10,
-      "price": 1200,
-      "description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
-      "filter": [
-        "brand1",
-        "color1"
-      ],
-      "comment": [
-        {
-          "id": 1,
-          "description": "Bir Güzel yorum",
-          "userName": "Ahmet",
-          "userEmail": "ahmey@gmail.com",
-          "date": "2023-01-01"
-        },
-        {
-          "id": 76,
-          "description": "asdfasdf",
-          "userName": "ismail",
-          "userEmail": "ismail@gmail.com",
-          "date": "2024-01-01"
-        },
-        {
-          "id": 260,
-          "description": "asdfasdf",
-          "userName": "ismail",
-          "userEmail": "ismail@gmail.com",
-          "date": "2024-01-01"
-        },
-        {
-          "id": 896,
-          "description": "asdfasdf",
-          "userName": "ismail",
-          "userEmail": "ismail@gmail.com",
-          "date": "2024-01-01"
-        },
-        {
-          "id": 654,
-          "description": "ismail",
-          "userName": "ismail",
-          "userEmail": "ismail@gmail.com",
-          "date": "2024-01-01"
-        }
-      ],
-      "date": "2023-01-01"
+           "Name": "ENDEAVOR DAYTRIP",
+      "CategoryId": 1,
+      "Image": "src/assets/img/product/product-w1.jpg",
+      "Discount": 10,
+      "Price": 1200,
+      "Description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 2,
-      "title": "EXPEDITION VOYAGE",
-      "categoryid": 3,
-      "image": "src/assets/img/product/product-w2.jpg",
-      "gallery": [
-        "image3.jpg",
-        "image4.jpg"
-      ],
-      "price": 1050,
-      "indirim": 10,
-      "description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
-      "filter": [
-        "brand2",
-        "color2"
-      ],
-      "comment": [
-        {
-          "id": 1,
-          "description": "Bir Güzel yorum",
-          "userName": "Ahmet",
-          "userEmail": "ahmey@gmail.com",
-          "date": "2023-01-01"
-        }
-      ],
-      "date": "2023-02-10"
+           "Name": "EXPEDITION VOYAGE",
+      "CategoryId": 3,
+      "Image": "src/assets/img/product/product-w2.jpg",
+      "Price": 1050,
+      "Discount": 10,
+      "Description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 3,
-      "title": "WILDERNESS JOURNEY",
-      "categoryid": 2,
-      "image": "src/assets/img/product/product-w3.jpg",
-      "gallery": [
-        "image5.jpg",
-        "image6.jpg"
-      ],
-      "price": 1250,
-      "indirim": 10,
-      "description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
-      "filter": [
-        "brand3",
-        "color3"
-      ],
-      "comment": [
-        {
-          "id": 1,
-          "description": "Bir Güzel yorum",
-          "userName": "Ahmet",
-          "userEmail": "ahmey@gmail.com",
-          "date": "2023-01-01"
-        }
-      ],
-      "date": "2023-03-20"
+           "Name": "WILDERNESS JOURNEY",
+      "CategoryId": 2,
+      "Image": "src/assets/img/product/product-w3.jpg",
+      "Price": 1250,
+      "Discount": 10,
+      "Description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 4,
-      "title": "OUTDOOR EXPLORE",
-      "categoryid": 1,
-      "image": "src/assets/img/product/product-w2.jpg",
-      "gallery": [
-        "image7.jpg",
-        "image8.jpg"
-      ],
-      "price": 1150,
-      "indirim": 10,
-      "description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
-      "filter": [
-        "brand4",
-        "color4"
-      ],
-      "comment": [
-        {
-          "id": 1,
-          "description": "Bir Güzel yorum",
-          "userName": "Ahmet",
-          "userEmail": "ahmey@gmail.com",
-          "date": "2023-01-01"
-        }
-      ],
-      "date": "2023-04-05"
+           "Name": "OUTDOOR EXPLORE",
+      "CategoryId": 1,
+      "Image": "src/assets/img/product/product-w2.jpg",
+      
+      "Price": 1150,
+      "Discount": 10,
+      "Description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 5,
-      "title": "HIKE ESCAPADE",
-      "categoryid": 3,
-      "image": "src/assets/img/product/product-w2.jpg",
-      "gallery": [
-        "image9.jpg",
-        "image10.jpg"
-      ],
-      "price": 950,
-      "indirim": 10,
-      "description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
-      "filter": [
-        "brand1",
-        "color1"
-      ],
-      "comment": [
-        {
-          "id": 1,
-          "description": "Bir Güzel yorum",
-          "userName": "Ahmet",
-          "userEmail": "ahmey@gmail.com",
-          "date": "2023-01-01"
-        }
-      ],
-      "date": "2023-05-15"
+           "Name": "HIKE ESCAPADE",
+      "CategoryId": 3,
+      "Image": "src/assets/img/product/product-w2.jpg",
+
+      "Price": 950,
+      "Discount": 10,
+      "Description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 6,
-      "title": "ADVENTURE TREK",
-      "categoryid": 1,
-      "image": "src/assets/img/product/product-w2.jpg",
-      "gallery": [
-        "image11.jpg",
-        "image12.jpg"
-      ],
-      "price": 1300,
-      "indirim": 10,
-      "description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
-      "filter": [
-        "brand2",
-        "color2"
-      ],
-      "comment": [
-        {
-          "id": 1,
-          "description": "Bir Güzel yorum",
-          "userName": "Ahmet",
-          "userEmail": "ahmey@gmail.com",
-          "date": "2023-01-01"
-        }
-      ],
-      "date": "2023-06-02"
+           "Name": "ADVENTURE TREK",
+      "CategoryId": 1,
+      "Image": "src/assets/img/product/product-w2.jpg",
+      "Price": 1300,
+      "Discount": 10,
+      "Description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 7,
-      "title": "NATURE TRAIL",
-      "categoryid": 2,
-      "image": "src/assets/img/product/product-w3.jpg",
-      "gallery": [
-        "image13.jpg",
-        "image14.jpg"
-      ],
-      "price": 1100,
-      "indirim": 10,
-      "description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
-      "filter": [
-        "brand3",
-        "color3"
-      ],
-      "comment": [
-        {
-          "id": 1,
-          "description": "Bir Güzel yorum",
-          "userName": "Ahmet",
-          "userEmail": "ahmey@gmail.com",
-          "date": "2023-01-01"
-        }
-      ],
-      "date": "2023-07-12"
+           "Name": "NATURE TRAIL",
+      "CategoryId": 2,
+      "Image": "src/assets/img/product/product-w3.jpg",
+      
+      "Price": 1100,
+      "Discount": 10,
+      "Description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 8,
-      "title": "DISCOVERY EXPEDITION",
-      "categoryid": 1,
-      "image": "src/assets/img/product/product-w3.jpg",
-      "gallery": [
-        "image15.jpg",
-        "image16.jpg"
-      ],
-      "price": 1180,
-      "indirim": 10,
-      "description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
-      "filter": [
-        "brand4",
-        "color4"
-      ],
-      "comment": [
-        {
-          "id": 1,
-          "description": "Bir Güzel yorum",
-          "userName": "Ahmet",
-          "userEmail": "ahmey@gmail.com",
-          "date": "2023-01-01"
-        }
-      ],
-      "date": "2023-08-25"
+           "Name": "DISCOVERY EXPEDITION",
+      "CategoryId": 1,
+      "Image": "src/assets/img/product/product-w3.jpg",
+      
+      "Price": 1180,
+      "Discount": 10,
+      "Description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 9,
-      "title": "WANDERLUST ADVENTURE",
-      "categoryid": 2,
-      "image": "src/assets/img/product/product-w2.jpg",
-      "gallery": [
-        "image17.jpg",
-        "image18.jpg"
-      ],
-      "price": 1230,
-      "indirim": 10,
-      "description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
-      "filter": [
-        "brand5",
-        "color5"
-      ],
-      "comment": [
-        {
-          "id": 1,
-          "description": "Bir Güzel yorum",
-          "userName": "Ahmet",
-          "userEmail": "ahmey@gmail.com",
-          "date": "2023-01-01"
-        }
-      ],
-      "date": "2023-09-08"
+           "Name": "WANDERLUST ADVENTURE",
+      "CategoryId": 2,
+      "Image": "src/assets/img/product/product-w2.jpg",
+      
+      "Price": 1230,
+      "Discount": 10,
+      "Description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 10,
-      "title": "EXPLORE WILDS",
-      "categoryid": 1,
-      "image": "src/assets/img/product/product-w3.jpg",
-      "gallery": [
-        "image19.jpg",
-        "image20.jpg"
-      ],
-      "price": 1020,
-      "indirim": 10,
-      "description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
-      "filter": [
-        "brand1",
-        "color1"
-      ],
-      "comment": [
-        {
-          "id": 1,
-          "description": "Bir Güzel yorum",
-          "userName": "Ahmet",
-          "userEmail": "ahmey@gmail.com",
-          "date": "2023-01-01"
-        }
-      ],
-      "date": "2023-10-17"
+     
+      "Name": "EXPLORE WILDS",
+      "CategoryId": 1,
+      "Image": "src/assets/img/product/product-w3.jpg",
+
+      "Price": 1020,
+      "Discount": 10,
+      "Description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 11,
-      "title": "TREKKING ADVENTURE",
-      "categoryid": 2,
-      "image": "src/assets/img/product/product-w2.jpg",
-      "gallery": [
-        "image21.jpg",
-        "image22.jpg"
-      ],
-      "price": 1280,
-      "indirim": 10,
-      "description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
-      "filter": [
-        "brand2",
-        "color2"
-      ],
-      "comment": [
-        {
-          "id": 1,
-          "description": "Bir Güzel yorum",
-          "userName": "Ahmet",
-          "userEmail": "ahmey@gmail.com",
-          "date": "2023-01-01"
-        }
-      ],
-      "date": "2023-11-19"
+     
+      "Name": "TREKKING ADVENTURE",
+      "CategoryId": 2,
+      "Image": "src/assets/img/product/product-w2.jpg",
+
+      "Price": 1280,
+      "Discount": 10,
+      "Description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 12,
-      "title": "WILDERNESS QUEST",
-      "categoryid": 3,
-      "image": "src/assets/img/product/product-w3.jpg",
-      "gallery": [
-        "image23.jpg",
-        "image24.jpg"
-      ],
-      "price": 1075,
-      "indirim": 10,
-      "description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
-      "filter": [
-        "brand3",
-        "color3"
-      ],
-      "comment": [
-        {
-          "id": 1,
-          "description": "Bir Güzel yorum",
-          "userName": "Ahmet",
-          "userEmail": "ahmey@gmail.com",
-          "date": "2023-01-01"
-        }
-      ],
-      "date": "2023-12-04"
+     
+      "Name": "WILDERNESS QUEST",
+      "CategoryId": 3,
+      "Image": "src/assets/img/product/product-w3.jpg",
+
+      "Price": 1075,
+      "Discount": 10,
+      "Description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 13,
-      "title": "OUTDOOR DISCOVERY",
-      "categoryid": 2,
-      "image": "src/assets/img/product/product-w2.jpg",
-      "gallery": [
-        "image25.jpg",
-        "image26.jpg"
-      ],
-      "price": 1145,
-      "indirim": 10,
-      "description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
-      "filter": [
-        "brand4",
-        "color4"
-      ],
-      "comment": [
-        {
-          "id": 1,
-          "description": "Bir Güzel yorum",
-          "userName": "Ahmet",
-          "userEmail": "ahmey@gmail.com",
-          "date": "2023-01-01"
-        }
-      ],
-      "date": "2023-12-15"
+     
+      "Name": "OUTDOOR DISCOVERY",
+      "CategoryId": 2,
+      "Image": "src/assets/img/product/product-w2.jpg",
+
+      "Price": 1145,
+      "Discount": 10,
+      "Description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 14,
-      "title": "HIKE JOURNEY",
-      "categoryid": 1,
-      "image": "src/assets/img/product/product-w3.jpg",
-      "gallery": [
-        "image27.jpg",
-        "image28.jpg"
-      ],
-      "price": 990,
-      "indirim": 10,
-      "description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
-      "filter": [
-        "brand5",
-        "color5"
-      ],
-      "comment": [
-        {
-          "id": 1,
-          "description": "Bir Güzel yorum",
-          "userName": "Ahmet",
-          "userEmail": "ahmey@gmail.com",
-          "date": "2023-01-01"
-        }
-      ],
-      "date": "2023-12-18"
+     
+      "Name": "HIKE JOURNEY",
+      "CategoryId": 1,
+      "Image": "src/assets/img/product/product-w3.jpg",
+
+      "Price": 990,
+      "Discount": 10,
+      "Description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
+      "IsStatus":true,
+      "IsDelete":false
+      
     },
     {
-      "id": 15,
-      "title": "EXPLORE QUEST",
-      "categoryid": 3,
-      "image": "src/assets/img/product/product-w2.jpg",
-      "gallery": [
-        "image29.jpg",
-        "image30.jpg"
-      ],
-      "price": 1100,
-      "indirim": 10,
-      "description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
-      "filter": [
-        "brand1",
-        "color1"
-      ],
-      "comment": [
-        {
-          "id": 1,
-          "description": "Bir Güzel yorum",
-          "date": "2023-01-01"
-        }
-      ],
-      "date": "2023-12-20"
+     
+      "Name": "EXPLORE QUEST",
+      "CategoryId": 3,
+      "Image": "src/assets/img/product/product-w2.jpg",
+     
+      "Price": 1100,
+      "Discount": 10,
+      "Description": "ENDEAVOR DAYTRIP, doğayla iç içe bir kaçış arayanlar için tasarlanmıştır. Bu macera dolu günübirlik gezinti, sizi muhteşem manzaraların ortasına taşır. Yüksek kaliteli malzemelerle üretilmiş olup, dayanıklılığı ve konforu ön planda tutar. Farklı renk seçenekleriyle tarzınıza uygun olanı seçebilirsiniz. Hem deneyimli gezginler hem de yeni başlayanlar için mükemmel bir seçimdir.",
+      "IsStatus":true,
+      "IsDelete":false
+
     }
   ],
   "Users": [
     {
-      "id": 1,
-      "name": "John Doe",
+           "name": "John Doe",
       "email": "john.doe@example.com",
       "password": "hashedpassword123"
     },
     {
-      "id": 2,
+      "Id": 2,
       "name": "Jane Doe",
       "email": "jane.doe@example.com",
       "password": "hashedpassword456"
@@ -469,89 +209,105 @@
       "name": "ethem",
       "email": "ethem@gmail.com",
       "password": "12345678",
-      "id": 3
+      "Id": 3
     },
     {
       "name": "ismail",
       "email": "ismail@gmail.com",
       "password": "12345678",
-      "id": 4
+      "Id": 4
     }
   ],
   "Blogs": [
     {
-      "id": 1,
-      "title": "Watch Blog",
-      "short_desc": "Latest tech trends",
-      "long_desc": "In-depth articles on the latest technology",
-      "image": "src/assets/img/blog/blog-large-1.jpg",
-      "date": "2023-01-03"
+      
+      "Name": "Watch Blog",
+      "Short_desc": "Latest tech trends",
+      "Long_desc": "In-depth articles on the latest technology",
+      "Image": "src/assets/img/blog/blog-large-1.jpg",
+      "CreateDate": "2023-01-03",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 2,
-      "title": "Gadget Insights",
-      "short_desc": "Exploring new gadgets",
-      "long_desc": "Discover the latest insights and reviews on gadgets.",
-      "image": "src/assets/img/blog/blog-large-2.jpg",
-      "date": "2023-02-10"
+      
+      "Name": "Gadget Insights",
+      "Short_desc": "Exploring new gadgets",
+      "Long_desc": "Discover the latest insights and reviews on gadgets.",
+      "Image": "src/assets/img/blog/blog-large-2.jpg",
+      "CreateDate": "2023-02-10",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 3,
-      "title": "Tech Reviews Today",
-      "short_desc": "Reviewing the newest tech",
-      "long_desc": "Unbiased reviews and analysis on the newest tech products.",
-      "image": "src/assets/img/blog/blog-large-3.jpg",
-      "date": "2023-03-20"
+      
+      "Name": "Tech Reviews Today",
+      "Short_desc": "Reviewing the newest tech",
+      "Long_desc": "Unbiased reviews and analysis on the newest tech products.",
+      "Image": "src/assets/img/blog/blog-large-3.jpg",
+      "CreateDate": "2023-03-20",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 4,
-      "title": "Innovation Chronicles",
-      "short_desc": "Chronicling innovation stories",
-      "long_desc": "In-depth stories on innovations shaping the world.",
-      "image": "src/assets/img/blog/blog-large-4.jpg",
-      "date": "2023-04-05"
+      
+      "Name": "Innovation Chronicles",
+      "Short_desc": "Chronicling innovation stories",
+      "Long_desc": "In-depth stories on innovations shaping the world.",
+      "Image": "src/assets/img/blog/blog-large-4.jpg",
+      "CreateDate": "2023-04-05",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 5,
-      "title": "Tech Talks",
-      "short_desc": "Discussions on tech trends",
-      "long_desc": "Engaging discussions on the current trends in technology.",
-      "image": "src/assets/img/blog/blog-large-5.jpg",
-      "date": "2023-05-15"
+      
+      "Name": "Tech Talks",
+      "Short_desc": "Discussions on tech trends",
+      "Long_desc": "Engaging discussions on the current trends in technology.",
+      "Image": "src/assets/img/blog/blog-large-5.jpg",
+      "CreateDate": "2023-05-15",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 6,
-      "title": "Future Tech Explorations",
-      "short_desc": "Exploring future tech",
-      "long_desc": "Exploring the possibilities of future technology advancements.",
-      "image": "src/assets/img/blog/blog-large-6.jpg",
-      "date": "2023-06-02"
+      
+      "Name": "Future Tech Explorations",
+      "Short_desc": "Exploring future tech",
+      "Long_desc": "Exploring the possibilities of future technology advancements.",
+      "Image": "src/assets/img/blog/blog-large-6.jpg",
+      "CreateDate": "2023-06-02",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 7,
-      "title": "Digital Innovators Hub",
-      "short_desc": "Spotlighting digital innovators",
-      "long_desc": "Spotlighting and celebrating digital innovators and their work.",
-      "image": "src/assets/img/blog/blog-large-7.jpg",
-      "date": "2023-07-12"
+      
+      "Name": "Digital Innovators Hub",
+      "Short_desc": "Spotlighting digital innovators",
+      "Long_desc": "Spotlighting and celebrating digital innovators and their work.",
+      "Image": "src/assets/img/blog/blog-large-7.jpg",
+      "CreateDate": "2023-07-12",
+      "IsStatus":true,
+      "IsDelete":false
     },
     {
-      "id": 8,
-      "title": "Emerging Tech Trends",
-      "short_desc": "Unveiling emerging tech",
-      "long_desc": "Unveiling the latest trends and innovations in emerging tech.",
-      "image": "src/assets/img/blog/blog-large-8.jpg",
-      "date": "2023-08-25"
+      
+      "Name": "Emerging Tech Trends",
+      "Short_desc": "Unveiling emerging tech",
+      "Long_desc": "Unveiling the latest trends and innovations in emerging tech.",
+      "Image": "src/assets/img/blog/blog-large-8.jpg",
+      "CreateDate": "2023-08-25",
+      "IsStatus":true,
+      "IsDelete":false
     }
   ],
   "Wishlist": [
     {
-      "id": 1,
+      "Id": 1,
       "product_id": 1,
       "user_id": 1
     },
     {
-      "id": 2,
+      "Id": 2,
       "product_id": 2,
       "user_id": 2
     }
